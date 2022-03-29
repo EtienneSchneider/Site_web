@@ -44,7 +44,7 @@ li, a, button{
     align-items: center;
     padding: 20px 10%;
     transition: all 0.3s ease 0s;
-    z-index: 2;
+    z-index: 3;
     background-color: transparent;
     position: fixed;
 }
@@ -243,12 +243,6 @@ ul{
     height: 45px;
 }
 
-
-
-
-
-
-
 #portfolio{
     position: absolute;
     left: 60vw;
@@ -371,6 +365,7 @@ footer{
     background-color: #E3E6FC;
     font-family: "Montserrat", sans-serif;
     padding-top:20px;
+    margin-top: 4vh;
 }
 
 .header{
