@@ -6,6 +6,14 @@ body{
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    width: 101%;
+}
+
+*{
+    scroll-behavior: smooth !important;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 #main{
@@ -64,6 +72,7 @@ ul{
     background-color: transparent;
     color: #E3E6FC;
     font-weight: 600;
+    z-index: 20;
 }
 
 
@@ -347,7 +356,8 @@ footer{
 #skills{
     background-color: #E3E6FC;
     font-family: "Montserrat", sans-serif;
-    padding-top:20px;
+    padding-top:40px;
+    padding-bottom:40px;
     margin-top: 4vh;
     /* box-shadow: rgba(50, 50, 93, 0.45) 0px 13px 27px -5px; */
 }
@@ -384,7 +394,7 @@ footer{
 
 .skill-box{
     padding: 1rem;
-    cursor: pointer;
+    cursor: grab;
 }
 
 .skill-box:hover > .skill-title:after, .skill-box:hover > .skill-title:before{
@@ -465,10 +475,10 @@ footer{
 /*portfolio part  */
 
 .portfolio{
-    background-color: #E3E6FC;
+    background-color: #D5D8ED;
     font-family: "Montserrat", sans-serif;
-    padding-top:20px;
-    margin-top: 4vh; 
+    padding-top:40px;
+    padding-bottom:40px;
 }
 
 .portfolio .header h1{
@@ -488,10 +498,10 @@ footer{
 
 
 .project-card{
-   text-align: center;
+    text-align: center;
     flex-wrap: wrap;
     justify-content: center;
-    
+    margin-bottom: 3rem;
 }
 
 .card-hover{
@@ -552,6 +562,8 @@ footer{
     display: flex;
     justify-content: center;
     height: 100vh;
+    padding-top:40px;
+    padding-bottom:40px;
     font-family: "Montserrat", sans-serif;
   }
 
@@ -560,11 +572,12 @@ footer{
   }
   
   .form {
-    background-color: #15172b;
+    background-color: #24252a;
     border-radius: 20px;
     box-sizing: border-box;
     padding: 20px;
     width: 65vw;
+    text-align: center;
   }
   
   .input-container {
@@ -582,7 +595,7 @@ footer{
   }
   
   .input {
-    background-color: #303245;
+    background-color: #444752;
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
@@ -595,7 +608,7 @@ footer{
   }
 
   .input-content {
-    background-color: #303245;
+    background-color: #444752;
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
@@ -615,7 +628,7 @@ footer{
   
   
   .cut {
-    background-color: #15172b;
+    background-color: #24252a;
     border-radius: 10px;
     height: 20px;
     left: 20px;
@@ -630,6 +643,10 @@ footer{
   .input:focus ~ .cut,
   .input:not(:placeholder-shown) ~ .cut {
     transform: translateY(8px);
+  }
+
+  #crosslogo{
+      display: none;
   }
 
   .placeholder {
@@ -670,14 +687,17 @@ footer{
     margin-top: 100px;
     margin-bottom:20px;
     text-align: center;
-    width: 100%;
+    /* width: 25%; */
   }
   
   .submit:active {
     background-color: #06b;
   }
 
-  
+
+  #burgerlogo, #toggle, #burg-menu{
+      display: none;
+  }
 
 
 
@@ -691,19 +711,34 @@ footer{
         height: 5%;
         cursor: pointer;
         font-family: "Montserrat", sans-serif;
-        font-size: 5Opx;
+        font-size: 30px;
         background-color: transparent;
         color: #fff;
         font-weight: 600;
     }
     
+    #burg-menu{
+        transition: all 0.3s ease 0s;
+    }
+
+    #text-1{
+        font-size: 45px  !important;
+    }
     
+    #text-2{
+        font-size: 65px !important;
+    }
+
+    #text-3{
+        font-size: 45px !important;
+    }
    
     
     .navlinks li {
         display: inline-block;
         padding: 0px 20px;
         margin-right: 10px;
+        margin-top: 20px;
     
      }
     
@@ -711,7 +746,61 @@ footer{
         transition: all 0.3s ease 0s;    
         font-size:  20px;
      }
-   
+
+     .navlinks, .cta, #logolin{
+        display: none;
+    }
+    #burgerlogo{
+        display: block;
+        cursor: pointer;
+        z-index: 20;
+    }
+
+    #crosslogo{
+        cursor: pointer;
+        z-index: 20;
+    }
+
+    
+    .burg-active{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 25vh;
+        background-color: #24252a;
+        transform: translateX(0);
+        transition: all 0.3s ease 0s;
+    }
+
+
+    #navhide{
+        flex-direction: column;
+        padding: 2rem;
+        justify-content: space-around;
+        list-style: none;
+        text-align: center;
+        margin-top: 40px;
+        
+    }
+
+    .burg-active,ul, li{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        
+    }
+    
+    .burg-active li{
+        margin-top:30px ;
+    }
+
+    #main{
+        background-image: url("data/fond/2.png");
+        background-size: cover;
+
+    }
+      
 
  }
 
@@ -723,10 +812,41 @@ footer{
         grid-template-columns: repeat(2, 1fr);
         padding: 2rem 50px;
     }
+ }
 
+ @media  screen and (max-width: 780px) {
+    #text-1{
+        font-size: 25px  !important;
+    }
+
+    #text-2{
+        font-size: 45px !important;
+    }
+
+    #text-3{
+        font-size: 25px !important;
+    }
 
 
  }
 
+ @media  screen and (max-width: 550px) {
+    #text-1{
+        font-size: 25px  !important;
+    }
 
- 
+    #text-2{
+        font-size: 35px !important;
+    }
+
+    #text-3{
+        font-size: 25px !important;
+    }
+
+    .home-content{
+        padding-top: 37vh;
+    }
+
+
+ }
+
